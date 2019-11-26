@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func handeGetData(){
-        let jsonUrl = "https://feed2json.org/convert?url=https%3A%2F%2Fwww.nasa.gov%2Frss%2Fdyn%2Fbreaking_news.rss"
+        let jsonUrl = "https://newsapi.org/v2/everything?q=bitcoin&from=2019-10-26&sortBy=publishedAt&apiKey=0629659f28b841eb9c5bbdf3ad1cd649"
         
         guard let url = URL(string: jsonUrl) else {return}
         var urlRequest = URLRequest(url: url)
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }//handle data
     
     func populateData(_ dict: [String:Any]){
-        guard let responseDict = dict["items"] as? [Gloss.JSON] else {
+        guard let responseDict = dict["articles"] as? [Gloss.JSON] else {
             return
         }
         items = [Item].from(jsonArray: responseDict) ?? []

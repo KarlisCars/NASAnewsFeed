@@ -16,7 +16,7 @@ struct Item: JSONDecodable {
     
     init?(json: JSON) {
         self.title = "title" <~~ json ?? ""
-        self.content_html = "content_html" <~~ json ?? ""
+        self.content_html = "content" <~~ json ?? ""
         self.url = "url" <~~ json ?? ""
         
     }

@@ -1,0 +1,6 @@
+framework module Pods_NASAnewsFeed {
+  umbrella header "Pods-NASAnewsFeed-umbrella.h"
+
+  export *
+  module * { export * }
+}
